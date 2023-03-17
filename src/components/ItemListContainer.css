@@ -1,0 +1,21 @@
+#item-list-container {
+  text-align: center;
+  font-size: x-large;
+}
+
+.instrumentos_Grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 40px;
+  padding: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .instrumentos_Grid {
+    grid-template-columns: 100%;
+    /* gap: 40px;
+    padding: 20px;
+    justify-content: center; */
+  }
+}

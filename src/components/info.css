@@ -1,0 +1,32 @@
+.img {
+  width: 90%;
+}
+
+@media (max-width: 560px) {
+  .img {
+    width: 70%;
+    height: auto;
+  }
+}
+
+.container {
+  margin-top: 4rem;
+  justify-content: center;
+  display: flex;
+}
+
+.inline {
+  display: inline;
+}
+
+.cardImg {
+  margin-left: 20px;
+  width: 50%;
+  flex: 1;
+}
+
+.cardInfo {
+  width: 50%;
+  flex: 0.9;
+  /* background: blue; */
+}

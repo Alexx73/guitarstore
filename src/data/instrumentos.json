@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bajo Spector Euro 5 ",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "225000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/bass-spector-euro-5.jpg?alt=media&token=10bbadfd-8c78-4ad0-8e93-ca0e36ca4ce2",
+    "vote_average": 8.5,
+    "categoria": "Bajo eléctrico"
+  },
+  {
+    "id": 2,
+    "nombre": "Bajo electrico Fender",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Gris",
+    "precio": "202000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/bass_fender-american.jpg?alt=media&token=46f6059d-ea25-4413-b484-833234117d23",
+    "vote_average": 8.5,
+    "categoria": "Bajo eléctrico"
+  },
+  {
+    "id": 3,
+    "nombre": "Bajo electrico G & L",
+    "descripcion": "Material: Arce  Tipo: Cuerpo semi solido · Color: Negro",
+    "precio": "214000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/bass_g-l-t.jpg?alt=media&token=9049dbdd-d7ac-4476-a95f-319eb4eff251",
+    "vote_average": 8.5,
+    "categoria": "Bajo eléctrico"
+  },
+  {
+    "id": 4,
+    "nombre": "Bajo ESP LTD",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "252000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/bass_esp-ltd-b-1005se-multi-scale-ns.jpg?alt=media&token=ed6e5846-516c-4524-af65-ca22d29b7424",
+    "vote_average": 8.5,
+    "categoria": "Bajo eléctrico"
+  },
+  {
+    "id": 5,
+    "nombre": "Bajo Music Man",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "266000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/bass_music-man-stingray-special-mm108-mn-vt.jpg?alt=media&token=2f101883-cd8a-47c8-a120-b10f57387136",
+    "vote_average": 8.5,
+    "categoria": "Bajo eléctrico"
+  },
+  {
+    "id": 6,
+    "nombre": "Ibanez Gio",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "212000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/guit_Ibanez-Gio.jpg?alt=media&token=b81af5fa-e22c-4826-8b40-db1ed897b3d0",
+    "vote_average": 8.5,
+    "categoria": "Guitarra eléctrica"
+  },
+  {
+    "id": 7,
+    "nombre": "Ibanez Jem Jr",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "289000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/guit_Ibanez-Jem-Jr.jpg?alt=media&token=f4c620e0-6546-4c34-b7c7-d224d289983f",
+    "vote_average": 8.5,
+    "vote_count": 140,
+    "categoria": "Guitarra eléctrica"
+  },
+  {
+    "id": 8,
+    "nombre": "Fender Stratocaster",
+    "descripcion": "Material: Arce  Tipo: Cuerpo solido · Color: Gris",
+
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/guit_fender-jimi-hendrix--relic.jpg?alt=media&token=3d98831a-dcbe-4cb3-935b-f6b71a6e0aed",
+    "vote_average": 8.5,
+    "categoria": "Guitarra eléctrica"
+  },
+  {
+    "id": 9,
+    "nombre": "Fender Telecaster",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "216000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/guit-fender-telecaster%20480.jpg?alt=media&token=5cbc510b-1321-47d7-9c06-4659e64ad192",
+    "vote_average": 8.5,
+    "categoria": "Guitarra eléctrica"
+  },
+  {
+    "id": 10,
+    "nombre": "Ibanez Jem 777L",
+    "descripcion": "Material: Poplar  Tipo: Cuerpo solido · Color: Surf Green",
+    "precio": "266000 ",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/guit_Ibanez%20JEM777L.jpg?alt=media&token=835ba0b6-c403-421b-93d5-2d415e4c270b",
+    "vote_average": 8.5,
+    "categoria": "Guitarra eléctrica"
+  },
+
+  {
+    "id": 11,
+    "categoria": "accesorios",
+    "descripcion": "Encordado para bajo de 5 cuerdas Ernie Ball Slinky Cobalt",
+    "nombre": "Cuerdas para bajo Ernie Ball",
+    "precio": "22500",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/acc%20-%20Encordado%20para%20bajo%20de%205%20cuerdas%20Ernie%20Ball.jpg?alt=media&token=b8966ff0-b4d0-4233-a42f-efdcf0ed8ed5"
+  },
+  {
+    "id": 12,
+    "categoria": "accesorios",
+    "descripcion": "Correa para Guitarra Eléctrica y Bajo Stagg con puntera de cuero",
+    "nombre": "Correa para Guitarra y Bajo ",
+    "precio": "8950",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/acc%20-%20%20CORREA%20PARA%20GUITARRA%20Y%20BAJO.jpg?alt=media&token=2a06e205-13b3-440f-8075-61ac5f85eccf"
+  },
+  {
+    "id": 13,
+    "categoria": "accesorios",
+    "descripcion": "Amplificador combo para bajo, Hartke HD150, 150w",
+    "nombre": "Amplificador para bajo",
+    "precio": "263000",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/acc%20-%20amplificador%20para%20bajo%20Hartke.jpg?alt=media&token=c993cd09-156c-4ad5-b2c5-1c75b3bf670e"
+  },
+  {
+    "id": 14,
+    "categoria": "accesorios",
+    "descripcion": "ROLAND JC40 JAZZ CHORUS AMPLIFICADOR 40 WATTS 2 X 10'' El Jazz Chorus JC-40",
+    "nombre": "Amplificador para guitarra Roland",
+    "precio": "295000",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/acc%20-%20amplificador%20para%20guitarra%20Roland.jpg?alt=media&token=ed5b201d-68de-4161-949d-b39b69410f5b"
+  },
+  {
+    "id": 15,
+    "categoria": "accesorios",
+    "descripcion": "Funda para Bajo electrico, Marca Fender, 1,05 mts",
+    "nombre": "Funda para Bajo",
+    "precio": "15000",
+    "poster_path": "https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/acc%20-%20%20funda%20para%20bajo%20electrico.png?alt=media&token=0271e601-e2ab-418a-8b74-e07da65bf018"
+  }
+]
