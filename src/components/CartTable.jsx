@@ -21,20 +21,32 @@ import Select from "@mui/material/Select";
 
 import Button from "@mui/material/Button";
 import { miContext } from "../aplicacion/Provider";
+import { useNavigate } from "react-router-dom";
 
 const CartTable = () => {
   const { contador, setContador } = miContext();
   const { compra, setCompra } = miContext();
   const [total_compra, setTotal_compra] = useState(0);
 
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    // console.log("ir a carrito");
+
+    navigate("/checkout");
+  };
+
   const handleDelete = (id) => {
     console.log("delete item", id);
     let del = compra.filter((item) => item.id == id);
     if (del.length == 0) {
-      setCompra([]);
-      setContador(contador - 1);
+      setCompra([{}]);
+      setContador(0);
+
+      Navigate("/");
     } else {
       setCompra(del);
+      setContador(contador - 1);
     }
 
     console.log(compra);
@@ -131,7 +143,7 @@ const CartTable = () => {
         {/* <h4 align="right"> {100000}</h4> */}
       </TableContainer>
 
-      <Button onClick={() => console.log("checkout")} variant="contained">
+      <Button onClick={handleCheckout} variant="contained">
         Checkout
       </Button>
     </div>

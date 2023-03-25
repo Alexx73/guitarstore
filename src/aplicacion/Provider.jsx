@@ -9,12 +9,23 @@ export const miContext = () => useContext(Appcontext);
 const Provider = ({ children }) => {
   const [contador, setContador] = useState(0);
 
-  const [compra, setCompra] = useState([{}]);
+  const [compra, setCompra] = useState([]);
+
+  const [instrumentos2, setInstrumentos2] = useState([]);
 
   return (
     // <Appcontext.Provider value={[contador, setContador]}>
 
-    <Appcontext.Provider value={{ contador, setContador, compra, setCompra }}>
+    <Appcontext.Provider
+      value={{
+        contador,
+        setContador,
+        compra,
+        setCompra,
+        instrumentos2,
+        setInstrumentos2,
+      }}
+    >
       {children}
     </Appcontext.Provider>
   );

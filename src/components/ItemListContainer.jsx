@@ -15,6 +15,7 @@ const ItemListContainer = ({ greeting }) => {
   const [guitarras, setGuitarras] = useState([]);
   const [accesorios, setAccesorios] = useState([]);
 
+  const { instrumentos2, setInstrumentos2 } = miContext();
   // const [cantidad, setCantidad] = miContext(0);
 
   const bajo_electrico = "Bajo eléctrico";
@@ -28,6 +29,9 @@ const ItemListContainer = ({ greeting }) => {
   const getInstrumentos = async () => {
     const data = await getDocs(instrumentosCollection);
     // await data.docs.foreach((doc) => console.log(...doc.data()));
+
+    setInstrumentos2(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+
     setInstrumentos(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     setBajos(
       data.docs.filter((bajo) => bajo.data().categoria == bajo_electrico)
@@ -44,6 +48,7 @@ const ItemListContainer = ({ greeting }) => {
     // console.log("instrumentos" + instrumentos);
 
     console.log("bajos " + bajos);
+    console.log("instrumentos2 :", instrumentos2);
   };
   // 6- useEffect
   useEffect(() => {

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import "./CartWidget.css";
+import { Navigate } from "react-router-dom";
 
 import instrumentos from "../data/instrumentos.json";
 
@@ -61,7 +62,11 @@ const CartWidget = ({}) => {
     <div className="cart-widget">
       <h6 className="title">Mi Carrito</h6>
 
-      {contador <= 0 ? <h2>tu carrito está vacio</h2> : <CartTable />}
+      {contador <= 0 || !contador ? (
+        <h2>tu carrito está vacio</h2>
+      ) : (
+        <CartTable />
+      )}
     </div>
   );
 };
