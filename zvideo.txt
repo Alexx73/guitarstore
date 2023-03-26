@@ -9,10 +9,15 @@ min
 
 ---
 
-crear objeto compra
+crear objeto compra - listo
 
-enviar a firebase
+enviar a firebase - listo
 
-mejorar carrito (cantidades)
+todo
+
+mejorar carrito (cantidades y totales)
+
+revisar el renderizado de instrumentos,
+parece haber algun problema con los ids
 
 

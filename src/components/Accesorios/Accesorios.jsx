@@ -2,7 +2,7 @@ import React from "react";
 
 import InstumentosCard from "../InstumentosCard";
 
-import "../../data/instrumentos.json";
+// import "../../data/instrumentos.json";
 
 import "./Accesorios.css";
 import { miContext } from "../../aplicacion/Provider";

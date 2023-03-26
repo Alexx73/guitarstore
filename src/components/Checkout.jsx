@@ -1,21 +1,16 @@
 import * as React from "react";
-
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 
-import DialogBox from "./DialogBox";
-
-// Dialog Box
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import { miContext } from "../aplicacion/Provider";
+import { db } from "../firebaseConfig/firebase";
+
+import { collection, getDocs, setDoc, doc, addDoc } from "firebase/firestore";
 
 const Checkout = () => {
+  const VentasCollection = collection(db, "ventas");
+
   const [open, setOpen] = React.useState(false);
   const [textInput, setTextInput] = React.useState("");
   const total_compra = 350000;
@@ -26,6 +21,8 @@ const Checkout = () => {
   const [direccion, setDireccion] = React.useState("");
   const [telefono, setTelefono] = React.useState("");
 
+  const [form_lleno, setForm_lleno] = React.useState(false);
+
   const { total, setTotal } = miContext();
 
   const handleName = (event) => {
@@ -35,23 +32,71 @@ const Checkout = () => {
   };
 
   const handleFinalizar = () => {
-    // setOpen(true);
-    const venta2 = {
-      id: "",
-      nombre: form_nombre,
-      apellido: form_apellido,
-      email: form_email,
-      total: total,
-      telefono: telefono,
-    };
+    if (
+      form_nombre == "" ||
+      form_apellido == "" ||
+      direccion == "" ||
+      form_email == "" ||
+      telefono == ""
+    ) {
+      console.log("debe llenar los campos");
+      alert("debe llenar todos los campos");
+    } else {
+      const venta2 = {
+        nombre: form_nombre,
+        apellido: form_apellido,
+        direccion: direccion,
+        email: form_email,
+        telefono: telefono,
+        total: total_compra,
+      };
 
-    console.log("Finalizar compra", venta2);
-    setForm_nombre("");
-    setForm_apellido("");
-    setForm_Email("");
-    setDireccion("");
-    setTotal(0);
-    setTelefono("");
+      // Enviar a Firebase
+      const agregarCompra = async () => {
+        const data = await addDoc(
+          VentasCollection,
+          venta2
+
+          //   {
+          //   nombre: form_nombre,
+          //   apellido: form_apellido,
+          //   direccion: direccion,
+          //   email: form_email,
+          //   telefono: telefono,
+          //   total: total_compra,
+          // }
+        );
+      };
+
+      agregarCompra();
+
+      // await addDoc(productsCollection, {
+      //   description: description,
+      //   stock: stock,
+      // });
+
+      // const docRef = await addDoc(collection(db, "cities"), {
+      //   name: "Tokyo",
+      //   country: "Japan"
+      // });
+
+      // await setDoc(doc(db, "cities", "LA"), {
+      //   name: "Los Angeles",
+      //   state: "CA",
+      //   country: "USA"
+      // });
+
+      alert("Gracias por su compra");
+
+      console.log("Finalizar compra", venta2);
+      setForm_nombre("");
+      setForm_apellido("");
+      setForm_Email("");
+      setDireccion("");
+      setTotal(0);
+      setTelefono("");
+    }
+    // setOpen(true);
   };
 
   const handleClose = () => {
@@ -168,8 +213,8 @@ const Checkout = () => {
 
           <TextField
             id="outlined-read-only-input"
-            label="Total"
-            value={total}
+            label="Total Compra"
+            value={total_compra}
             InputProps={{
               readOnly: true,
             }}
@@ -192,7 +237,11 @@ const Checkout = () => {
         </div>
       </Box>
 
-      <Button onClick={handleFinalizar} variant="contained">
+      <Button
+        disabled={form_lleno}
+        onClick={handleFinalizar}
+        variant="contained"
+      >
         Finalizar compra
       </Button>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import instrumentos from "../data/instrumentos.json";
+// import instrumentos from "../data/instrumentos.json";
 import InstumentosCard from "./InstumentosCard";
 import "./Bajos.css";
 import { miContext } from "../aplicacion/Provider";

@@ -28,6 +28,8 @@ const CartTable = () => {
   const { compra, setCompra } = miContext();
   const [total_compra, setTotal_compra] = useState(0);
 
+  console.log(compra);
+
   const navigate = useNavigate();
 
   const handleCheckout = () => {
