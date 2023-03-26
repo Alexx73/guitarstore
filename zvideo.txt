@@ -7,4 +7,12 @@ min
 
 25
 
+---
+
+crear objeto compra
+
+enviar a firebase
+
+mejorar carrito (cantidades)
+
 

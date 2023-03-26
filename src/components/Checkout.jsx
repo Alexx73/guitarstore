@@ -13,12 +13,26 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { miContext } from "../aplicacion/Provider";
 
 const Checkout = () => {
   const [open, setOpen] = React.useState(false);
+  const [textInput, setTextInput] = React.useState("");
+  const total_compra = 350000;
 
-  // const form_nombre = document.getElementById("#nombre").value;
-  // const form_apellido = document.getElementById("#apellido").value;
+  const [form_nombre, setForm_nombre] = React.useState("");
+  const [form_apellido, setForm_apellido] = React.useState("");
+  const [form_email, setForm_Email] = React.useState("");
+  const [direccion, setDireccion] = React.useState("");
+  const [telefono, setTelefono] = React.useState("");
+
+  const { total, setTotal } = miContext();
+
+  const handleName = (event) => {
+    event.preventDefault();
+    setForm_nombre(event.target.value);
+    console.log("nombre: ", form_nombre);
+  };
 
   const handleFinalizar = () => {
     // setOpen(true);
@@ -26,9 +40,18 @@ const Checkout = () => {
       id: "",
       nombre: form_nombre,
       apellido: form_apellido,
+      email: form_email,
+      total: total,
+      telefono: telefono,
     };
 
     console.log("Finalizar compra", venta2);
+    setForm_nombre("");
+    setForm_apellido("");
+    setForm_Email("");
+    setDireccion("");
+    setTotal(0);
+    setTelefono("");
   };
 
   const handleClose = () => {
@@ -49,11 +72,11 @@ const Checkout = () => {
 
   const pago = [
     {
-      value: "$ 30",
+      value: "30",
       label: "Visa",
     },
     {
-      value: "$ 50",
+      value: "50",
       label: "Master Card",
     },
   ];
@@ -74,30 +97,52 @@ const Checkout = () => {
         autoComplete="off"
       >
         <div>
-          <TextField required id="nombre" label="Nombre" defaultValue="" />
-          <TextField required id="apellido" label="Apellido" defaultValue="" />
+          <TextField
+            required
+            id="nombre"
+            label="Nombre"
+            // defaultValue=""
+            value={form_nombre}
+            onChange={handleName}
+          />
+          <TextField
+            required
+            id="apellido"
+            label="Apellido"
+            // defaultValue=""
+            value={form_apellido}
+            onChange={(event) => setForm_apellido(event.target.value)}
+          />
+          <TextField
+            required
+            id="email"
+            label="Email"
+            // defaultValue=""
+            value={form_email}
+            onChange={(event) => setForm_Email(event.target.value)}
+          />
 
           <TextField
             required
             id="direccion"
             label="Direccion"
-            defaultValue=""
+            value={direccion}
+            onChange={(event) => setDireccion(event.target.value)}
           />
 
-          <TextField required id="ciudad" label="Ciudad" defaultValue="" />
           <TextField
             required
-            id="provincia"
-            label="Provincia"
-            defaultValue=""
+            id="telefono"
+            label="Telefono"
+            value={telefono}
+            onChange={(event) => setTelefono(event.target.value)}
           />
 
-          <TextField
+          {/* <TextField
             required
             id="pago"
             select
             label="Metodo de pago"
-            // defaultValue="EUR"
             helperText="Elija el metodo de pago"
           >
             {pago.map((option) => (
@@ -105,43 +150,14 @@ const Checkout = () => {
                 {option.label}
               </MenuItem>
             ))}
-          </TextField>
-          {/* <TextField
-            id="outlined-password-input"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-          /> */}
-          <TextField
-            id="outlined-read-only-input"
-            label="Total"
-            defaultValue="250000"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-
-          <TextField
-            required
-            id="envio"
-            select
-            label="Envio"
-            defaultValue="EUR"
-            helperText="Elija el tipo de envio"
-          >
-            {envio.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
+          </TextField> */}
 
           {/* <TextField
             id="outlined-select-currency"
             select
             label="Select"
             defaultValue="EUR"
-            helperText="Please select your currency"
+            helperText="Elija el metodo de pago"
           >
             {pago.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -149,6 +165,15 @@ const Checkout = () => {
               </MenuItem>
             ))}
           </TextField> */}
+
+          <TextField
+            id="outlined-read-only-input"
+            label="Total"
+            value={total}
+            InputProps={{
+              readOnly: true,
+            }}
+          />
           {/* <TextField
             id="outlined-number"
             label="Number"
@@ -200,3 +225,40 @@ const Checkout = () => {
 export default Checkout;
 
 // {open ? <DialogBox /> : console.log(2)}
+
+// {/* <TextField
+// required
+// id="direccion"
+// label="Direccion"
+// defaultValue=""
+// />
+
+// <TextField required id="ciudad" label="Ciudad" defaultValue="" />
+// <TextField
+// required
+// id="provincia"
+// label="Provincia"
+// defaultValue=""
+// />
+
+// {/* <TextField
+// id="outlined-password-input"
+// label="Password"
+// type="password"
+// autoComplete="current-password"
+// /> */}
+
+// <TextField
+// required
+// id="envio"
+// select
+// label="Envio"
+// defaultValue="EUR"
+// helperText="Elija el tipo de envio"
+// >
+// {envio.map((option) => (
+//   <MenuItem key={option.value} value={option.value}>
+//     {option.label}
+//   </MenuItem>
+// ))}
+// </TextField> */}
