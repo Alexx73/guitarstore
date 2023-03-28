@@ -13,6 +13,7 @@ const Checkout = () => {
 
   const [open, setOpen] = React.useState(false);
   const [textInput, setTextInput] = React.useState("");
+
   const total_compra = 350000;
 
   const [form_nombre, setForm_nombre] = React.useState("");
@@ -214,7 +215,7 @@ const Checkout = () => {
           <TextField
             id="outlined-read-only-input"
             label="Total Compra"
-            value={total_compra}
+            value={total}
             InputProps={{
               readOnly: true,
             }}

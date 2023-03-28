@@ -27,6 +27,7 @@ const CartTable = () => {
   const { contador, setContador } = miContext();
   const { compra, setCompra } = miContext();
   const [total_compra, setTotal_compra] = useState(0);
+  const { total, setTotal } = miContext();
 
   console.log(compra);
 
@@ -37,21 +38,33 @@ const CartTable = () => {
 
     navigate("/checkout");
   };
-
+  // REvisar, no borra el ultimo elemento
   const handleDelete = (id) => {
-    console.log("delete item", id);
-    let del = compra.filter((item) => item.id == id);
-    if (del.length == 0) {
-      setCompra([{}]);
-      setContador(0);
+    // console.log("delete item", id);
+    console.log("del.lenght antes: ", compra.length);
 
-      Navigate("/");
+    console.log("id :", id);
+    // console.log("item.id :", item.id);
+    // console.log("del:", del);
+    if (compra == "undefined" || compra.length < 1) {
+      setCompra([]);
+      setContador(0);
+      setTotal(0);
+
+      // navigate("/");
     } else {
+      let del = compra.filter((item) => item.id == id);
       setCompra(del);
       setContador(contador - 1);
+      setTotal(total - del.precio);
     }
 
-    console.log(compra);
+    // console.log("del.lenght despues: ", del.length);
+
+    console.log("delete item", id);
+
+    // console.log("del:", del);
+    console.log("compra : ", compra);
   };
   return (
     <div>
@@ -80,7 +93,7 @@ const CartTable = () => {
                     className="imgSm"
                     // src="https://firebasestorage.googleapis.com/v0/b/crudcoder-544fb.appspot.com/o/bass_fender-american.jpg?alt=media&token=46f6059d-ea25-4413-b484-833234117d23"
                     alt=""
-                    src={compra.poster_path}
+                    src={item.poster_path}
                   />
                 </TableCell>
                 <TableCell align="left">{item.nombre}</TableCell>
@@ -137,7 +150,7 @@ const CartTable = () => {
               <TableCell align="center">total</TableCell>
               <TableCell align="center">
                 {" "}
-                <h4 align="left"> {100000}</h4>
+                <h4 align="left"> {total}</h4>
               </TableCell>
             </TableRow>
           </TableBody>

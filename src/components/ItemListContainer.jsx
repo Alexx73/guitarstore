@@ -47,7 +47,7 @@ const ItemListContainer = ({ greeting }) => {
 
     // console.log("instrumentos" + instrumentos);
 
-    console.log("bajos " + bajos);
+    // console.log("bajos " + bajos);
     console.log("instrumentos2 :", instrumentos2);
   };
   // 6- useEffect
@@ -63,6 +63,7 @@ const ItemListContainer = ({ greeting }) => {
           <InstumentosCard
             key={instrumento.id}
             instrumento={instrumento.data()}
+            poster_path={instrumento.poster_path}
           />
         ))}
       </ul>

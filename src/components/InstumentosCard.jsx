@@ -5,7 +5,7 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 // import { db } from "../firebaseConfig/firebase.js";
 import Button from "@mui/material/Button";
 
-const InstumentosCard = ({ instrumento }) => {
+const InstumentosCard = ({ instrumento, poster_path }) => {
   console.log(instrumento);
   return (
     <li className="movieCard">

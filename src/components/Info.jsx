@@ -20,17 +20,21 @@ import { miContext } from "../aplicacion/Provider";
 const Info = () => {
   const { contador, setContador } = miContext();
   const { compra, setCompra } = miContext();
+  const { total, setTotal } = miContext();
+  const { instrumentos2, setInstrumentos2 } = miContext();
 
   let params = useParams();
   let { id } = useParams();
   console.log(params);
 
-  const obj = instrumentos.find((obj) => obj.id == id);
-  // console.log(obj.nombre);
+  const obj = instrumentos2.find((obj) => obj.id == id);
+  console.log(obj.poster_path);
 
   const addToCart = () => {
     setContador(contador + 1);
     setCompra([...compra, obj]);
+    setTotal(total + obj.precio);
+    console.log("obj precio: ", obj.precio);
     // setCompra({ ...compra, item: { id: 1, nombre: "bajo loco" } });
     console.log("contador : ", contador);
     console.log("compra : ", compra);
@@ -57,9 +61,8 @@ const Info = () => {
           <Typography variant="body2" color="text.secondary">
             {obj.descripcion}
           </Typography>
-          <Typography variant="h6" color="text.secondary">
-            {obj.precio}
-          </Typography>
+          <p>{obj.precio}</p>
+          <Typography variant="h6" color="text.secondary"></Typography>
         </CardContent>
         {/* <h2> {obj.nombre} </h2>
         <h4> {obj.precio} </h4>

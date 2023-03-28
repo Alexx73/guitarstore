@@ -13,7 +13,7 @@ const Provider = ({ children }) => {
 
   const [instrumentos2, setInstrumentos2] = useState([]);
 
-  const [total, setTotal] = useState(500000);
+  const [total, setTotal] = useState(0);
 
   return (
     // <Appcontext.Provider value={[contador, setContador]}>

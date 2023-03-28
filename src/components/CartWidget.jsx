@@ -47,11 +47,11 @@ const CartWidget = ({}) => {
     console.log("delete item", id);
     let del = compra.filter((item) => item.id == id);
 
-    console.log(compra);
+    console.log("compra del: ", del);
   };
 
-  console.log("compra : ", compra);
-  console.log("compra : ", compra[0].nombre);
+  // console.log("compra : ", compra);
+  // console.log("compra : ", compra[0].nombre);
 
   return (
     // <div className="cart-widget">
