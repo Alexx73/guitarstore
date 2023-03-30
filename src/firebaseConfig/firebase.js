@@ -6,14 +6,7 @@ import { getFirestore } from "@firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCJiqu6rqwau5m7YzkevovbICkOB5S574U",
-  authDomain: "crudcoder-544fb.firebaseapp.com",
-  projectId: "crudcoder-544fb",
-  storageBucket: "crudcoder-544fb.appspot.com",
-  messagingSenderId: "565209805826",
-  appId: "1:565209805826:web:082a4a677491c820c9231b",
-};
+const firebaseConfig = {};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

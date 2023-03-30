@@ -17,7 +17,12 @@ todo
 
 mejorar carrito (cantidades y totales)
 
-revisar el renderizado de instrumentos,
-parece haber algun problema con los ids
+revisar el renderizado de instrumentos, listo
+parece haber algun problema con los ids - listo
+
+
+falta hacer un select para incrementar cantidades
+
+no borra el ultimo item de la compra - parece que ahora funciona
 
 

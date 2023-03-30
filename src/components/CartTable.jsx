@@ -40,28 +40,50 @@ const CartTable = () => {
   };
   // REvisar, no borra el ultimo elemento
   const handleDelete = (id) => {
-    // console.log("delete item", id);
-    console.log("del.lenght antes: ", compra.length);
+    // setTotal(total - del.precio);
+    // compra.find((item) => i);
+    let restar = compra.find((item) => item.id == id);
 
-    console.log("id :", id);
-    // console.log("item.id :", item.id);
-    // console.log("del:", del);
-    if (compra == "undefined" || compra.length < 1) {
-      setCompra([]);
-      setContador(0);
-      setTotal(0);
+    console.log("restar: ", restar.precio);
 
-      // navigate("/");
-    } else {
-      let del = compra.filter((item) => item.id == id);
-      setCompra(del);
-      setContador(contador - 1);
-      setTotal(total - del.precio);
-    }
+    setTotal(total - parseInt(restar.precio));
+
+    console.log("restar: ", restar);
+    let del = compra.filter((item) => {
+      item.id != id;
+      console.log(id);
+    });
+    setCompra(del);
+    setContador(contador - 1);
+
+    // if (compra == "undefined" || compra.length < 1) {
+    //   setCompra([]);
+    //   setContador(0);
+    //   setTotal(0);
+
+    //   // navigate("/");
+    // } else {
+    //   setCompra(del);
+    //   setContador(contador - 1);
+    // }
 
     // console.log("del.lenght despues: ", del.length);
 
     console.log("delete item", id);
+    console.log("type id: ", typeof id);
+
+    // let del = compra.filter((item) =>
+    //   console.log(
+    //     "type item.id : ",
+    //     typeof item.id,
+    //     "igualdad: ",
+    //     id == item.id
+    //   )
+    // );
+
+    console.log("arrayDel:", del);
+
+    // console.log(id == item.id);
 
     // console.log("del:", del);
     console.log("compra : ", compra);
