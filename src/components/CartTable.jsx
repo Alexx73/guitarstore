@@ -48,15 +48,18 @@ const CartTable = () => {
 
     setTotal(total - parseInt(restar.precio));
 
-    console.log("restar: ", restar);
+    console.log("del length 1: ", compra.length);
+
+    // console.log("restar: ", restar);
     let del = compra.filter((item) => {
       item.id != id;
-      console.log(id);
     });
-    setCompra(del);
-    setContador(contador - 1);
 
-    // if (compra == "undefined" || compra.length < 1) {
+    setContador(contador - 1);
+    setCompra(compra.filter((item) => item.id != id));
+
+    // setContador(contador - 1);
+    // if (del == "undefined" || del.length == 0) {
     //   setCompra([]);
     //   setContador(0);
     //   setTotal(0);
@@ -64,13 +67,17 @@ const CartTable = () => {
     //   // navigate("/");
     // } else {
     //   setCompra(del);
-    //   setContador(contador - 1);
     // }
+
+    console.log("compra : ", compra);
 
     // console.log("del.lenght despues: ", del.length);
 
     console.log("delete item", id);
-    console.log("type id: ", typeof id);
+
+    console.log("del length 2: ", del.length);
+
+    // console.log("type id: ", typeof id);
 
     // let del = compra.filter((item) =>
     //   console.log(
@@ -81,12 +88,7 @@ const CartTable = () => {
     //   )
     // );
 
-    console.log("arrayDel:", del);
-
-    // console.log(id == item.id);
-
-    // console.log("del:", del);
-    console.log("compra : ", compra);
+    // console.log("arrayDel:", del);
   };
   return (
     <div>
@@ -148,6 +150,7 @@ const CartTable = () => {
                 <TableCell align="center">
                   <DeleteForeverIcon
                     className="hoover"
+                    key={item.id}
                     onClick={() => handleDelete(item.id)}
                     color="primary"
                     style={{ fontSize: [45] }}
