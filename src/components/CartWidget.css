@@ -10,6 +10,7 @@
   /* padding: 5; */
   width: 80%;
   margin: auto;
+  min-height: 350px;
 }
 .cart {
   margin-right: 5;
@@ -44,3 +45,18 @@
 /* div {
   display: inline-block;
 } */
+
+.empty {
+  cursor: pointer;
+}
+
+.empty:hover {
+  /* width: 115px; */
+  transform: scale(1.2);
+  /* transform: rotate(-15deg); */
+}
+
+.header .logo img:hover {
+  transform: scale(1.2);
+  transform: rotate(-15deg);
+}

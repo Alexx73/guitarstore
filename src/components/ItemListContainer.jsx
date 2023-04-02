@@ -45,9 +45,6 @@ const ItemListContainer = ({ greeting }) => {
       data.docs.filter((accesorio) => accesorio.data().categoria == Accesorio)
     );
 
-    // console.log("instrumentos" + instrumentos);
-
-    // console.log("bajos " + bajos);
     console.log("instrumentos2 :", instrumentos2);
   };
   // 6- useEffect
@@ -57,7 +54,9 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <main>
-      <h2 id="item-list-container">{greeting}</h2>
+      <h6 className="title" id="item-list-container">
+        {greeting}
+      </h6>
       <ul className="instrumentos_Grid">
         {accesorios.map((instrumento) => (
           <InstumentosCard

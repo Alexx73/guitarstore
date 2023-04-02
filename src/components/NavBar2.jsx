@@ -8,10 +8,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { miContext } from "../aplicacion/Provider";
 
 const NavBar2 = () => {
-  // const [cantidad, setCantidad] = miContext();
   const { contador, setcontador } = miContext();
 
-  // console.log("cantidad: " + contador);
   return (
     <header className="header inline navbar">
       {/* <Link to="/"> */}

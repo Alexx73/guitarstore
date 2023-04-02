@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
+import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import "./CartWidget.css";
@@ -9,14 +11,6 @@ import { Navigate } from "react-router-dom";
 import instrumentos from "../data/instrumentos.json";
 
 //  ---
-
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -63,8 +57,24 @@ const CartWidget = ({}) => {
       <h6 className="title">Mi Carrito</h6>
 
       {contador <= 0 || !contador ? (
-        <h2>tu carrito está vacio</h2>
+        <Box
+          m={4}
+          //margin
+          align="center"
+          justify="center"
+          alignItems="center"
+        >
+          <h3>tu carrito está vacio</h3>
+
+          <ProductionQuantityLimitsIcon
+            className="empty"
+            color="primary"
+            style={{ fontSize: [110] }}
+            sx={{ paddingTop: 1, mt: 4 }}
+          ></ProductionQuantityLimitsIcon>
+        </Box>
       ) : (
+        // <h2>tu carrito está vacio</h2>
         <CartTable />
       )}
     </div>

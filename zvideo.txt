@@ -23,6 +23,11 @@ parece haber algun problema con los ids - listo
 
 falta hacer un select para incrementar cantidades
 
-no borra el ultimo item de la compra - parece que ahora funciona
+no borra el ultimo item de la compra - parece que ahora funciona - arreglado
+
+
+----------------------------------
+
+npm run deploy
 
 

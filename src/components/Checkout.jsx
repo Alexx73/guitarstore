@@ -7,6 +7,7 @@ import { miContext } from "../aplicacion/Provider";
 import { db } from "../firebaseConfig/firebase";
 
 import { collection, getDocs, setDoc, doc, addDoc } from "firebase/firestore";
+import "./Checkout.css";
 
 const Checkout = () => {
   const VentasCollection = collection(db, "ventas");
@@ -25,6 +26,8 @@ const Checkout = () => {
   const [form_lleno, setForm_lleno] = React.useState(false);
 
   const { total, setTotal } = miContext();
+  const { compra, setCompra } = miContext();
+  const { contador, setContador } = miContext();
 
   const handleName = (event) => {
     event.preventDefault();
@@ -94,45 +97,22 @@ const Checkout = () => {
       setForm_apellido("");
       setForm_Email("");
       setDireccion("");
-      setTotal(0);
       setTelefono("");
+      setCompra([]);
+      setTotal(0);
+      setContador(0);
     }
     // setOpen(true);
   };
 
-  const handleClose = () => {
-    const [venta, setVenta] = useState({});
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   const [venta, setVenta] = useState({});
+  //   setOpen(false);
+  // };
 
-  const envio = [
-    {
-      value: "$ 30",
-      label: "normal",
-    },
-    {
-      value: "$ 50",
-      label: "premium",
-    },
-  ];
-
-  const pago = [
-    {
-      value: "30",
-      label: "Visa",
-    },
-    {
-      value: "50",
-      label: "Master Card",
-    },
-  ];
   return (
-    <div>
-      <p>q </p>
-      <p> q</p>
-      <p>q </p>
-
-      <h2>Checkout</h2>
+    <div className="cart-widget">
+      <h2 className="title">Checkout</h2>
 
       <Box
         component="form"
@@ -142,8 +122,9 @@ const Checkout = () => {
         noValidate
         autoComplete="off"
       >
-        <div>
+        <div className="center">
           <TextField
+            mr={3}
             required
             id="nombre"
             label="Nombre"
@@ -198,20 +179,6 @@ const Checkout = () => {
             ))}
           </TextField> */}
 
-          {/* <TextField
-            id="outlined-select-currency"
-            select
-            label="Select"
-            defaultValue="EUR"
-            helperText="Elija el metodo de pago"
-          >
-            {pago.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField> */}
-
           <TextField
             id="outlined-read-only-input"
             label="Total Compra"
@@ -220,14 +187,7 @@ const Checkout = () => {
               readOnly: true,
             }}
           />
-          {/* <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          /> */}
+
           {/* <TextField id="outlined-search" label="Search field" type="search" /> */}
           {/* <TextField
             id="outlined-helperText"
@@ -238,13 +198,34 @@ const Checkout = () => {
         </div>
       </Box>
 
-      <Button
+      <Box
+        m={1}
+        //margin
+        display="flex"
+        justifyContent="center"
+        alignItems="flex-end"
+        // sx={boxDefault}
+      >
+        {/* <Button onClick={handleCheckout} variant="contained">
+          Checkout
+        </Button> */}
+
+        <Button
+          disabled={form_lleno}
+          onClick={handleFinalizar}
+          variant="contained"
+        >
+          Finalizar compra
+        </Button>
+      </Box>
+
+      {/* <Button
         disabled={form_lleno}
         onClick={handleFinalizar}
         variant="contained"
       >
         Finalizar compra
-      </Button>
+      </Button> */}
 
       {/* <Dialog
         open={open}
@@ -273,42 +254,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
-// {open ? <DialogBox /> : console.log(2)}
-
-// {/* <TextField
-// required
-// id="direccion"
-// label="Direccion"
-// defaultValue=""
-// />
-
-// <TextField required id="ciudad" label="Ciudad" defaultValue="" />
-// <TextField
-// required
-// id="provincia"
-// label="Provincia"
-// defaultValue=""
-// />
-
-// {/* <TextField
-// id="outlined-password-input"
-// label="Password"
-// type="password"
-// autoComplete="current-password"
-// /> */}
-
-// <TextField
-// required
-// id="envio"
-// select
-// label="Envio"
-// defaultValue="EUR"
-// helperText="Elija el tipo de envio"
-// >
-// {envio.map((option) => (
-//   <MenuItem key={option.value} value={option.value}>
-//     {option.label}
-//   </MenuItem>
-// ))}
-// </TextField> */}

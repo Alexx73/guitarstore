@@ -1,0 +1,10 @@
+.table {
+  width: 85%;
+  /* margin: auto; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgSm {
+  width: 70px;
+}

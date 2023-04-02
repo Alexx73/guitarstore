@@ -32,6 +32,9 @@ const Info = () => {
 
   const addToCart = () => {
     setContador(contador + 1);
+    if (compra.includes(obj)) {
+      console.log(obj);
+    }
     setCompra([...compra, obj]);
     setTotal(total + obj.precio);
     console.log("obj precio: ", obj.precio);

@@ -2,6 +2,7 @@
   "name": "ecomm2",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://alexx73.github.io/guitarstore/",
   "type": "module",
   "scripts": {
     "dev": "vite",

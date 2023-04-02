@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
+import "./CartTable.css";
+
 //
 
 import Table from "@mui/material/Table";
@@ -91,9 +93,9 @@ const CartTable = () => {
     // console.log("arrayDel:", del);
   };
   return (
-    <div>
+    <div className="table">
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 550 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="left">Item</TableCell>
@@ -138,13 +140,11 @@ const CartTable = () => {
         <MenuItem value={30}>3</MenuItem>
       </Select>
     </FormControl> */}
-
                   {/* <button id="sub">+</button>
 
     <input type="text" readOnly value="0" style="width: 5px;" />
     <button id="sub">-</button> */}
-
-                  {contador}
+                  1
                 </TableCell>
 
                 <TableCell align="center">
@@ -183,9 +183,18 @@ const CartTable = () => {
         {/* <h4 align="right"> {100000}</h4> */}
       </TableContainer>
 
-      <Button onClick={handleCheckout} variant="contained">
-        Checkout
-      </Button>
+      <Box
+        m={1}
+        //margin
+        display="flex"
+        justifyContent="center"
+        alignItems="flex-end"
+        // sx={boxDefault}
+      >
+        <Button onClick={handleCheckout} variant="contained">
+          Checkout
+        </Button>
+      </Box>
     </div>
   );
 };

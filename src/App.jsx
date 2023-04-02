@@ -14,6 +14,7 @@ import Checkout from "./components/Checkout";
 
 //   -----    Context ------
 import Provider from "./aplicacion/Provider";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
             <Route exact path="/carrito" element={<CartWidget />} />+
             <Route exact path="/checkout" element={<Checkout />} />
           </Routes>
+
+          <Footer />
         </BrowserRouter>
       </Provider>
     </div>
